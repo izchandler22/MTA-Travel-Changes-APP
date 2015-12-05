@@ -14,6 +14,7 @@
 		0F4F93981C13467D000F82CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4F93961C13467D000F82CE /* LaunchScreen.storyboard */; };
 		0F4F93A31C13467D000F82CE /* MTAAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F93A21C13467D000F82CE /* MTAAppTests.swift */; };
 		0F4F93AE1C13467D000F82CE /* MTAAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F93AD1C13467D000F82CE /* MTAAppUITests.swift */; };
+		8EB720F0422F4272EFC0D67F /* Pods_MTAApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810E176B5D49FD1C7E69CF1C /* Pods_MTAApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		0F4F93A91C13467D000F82CE /* MTAAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTAAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F4F93AD1C13467D000F82CE /* MTAAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTAAppUITests.swift; sourceTree = "<group>"; };
 		0F4F93AF1C13467D000F82CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		810E176B5D49FD1C7E69CF1C /* Pods_MTAApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTAApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA8040F81C9D4664B03E8385 /* Pods-MTAApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTAApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MTAApp/Pods-MTAApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CD2E3D79507E4C3FF2DACE80 /* Pods-MTAApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTAApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTAApp/Pods-MTAApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB720F0422F4272EFC0D67F /* Pods_MTAApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				0F4F93A11C13467D000F82CE /* MTAAppTests */,
 				0F4F93AC1C13467D000F82CE /* MTAAppUITests */,
 				0F4F938B1C13467D000F82CE /* Products */,
+				5D96E3E4E047661376313A14 /* Pods */,
+				DF24F3DD06A1E4BC2D87CA06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = MTAAppUITests;
 			sourceTree = "<group>";
 		};
+		5D96E3E4E047661376313A14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA8040F81C9D4664B03E8385 /* Pods-MTAApp.debug.xcconfig */,
+				CD2E3D79507E4C3FF2DACE80 /* Pods-MTAApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DF24F3DD06A1E4BC2D87CA06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				810E176B5D49FD1C7E69CF1C /* Pods_MTAApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F4F93B21C13467D000F82CE /* Build configuration list for PBXNativeTarget "MTAApp" */;
 			buildPhases = (
+				1EC91946D38EB2A0676F5392 /* Check Pods Manifest.lock */,
 				0F4F93861C13467D000F82CE /* Sources */,
 				0F4F93871C13467D000F82CE /* Frameworks */,
 				0F4F93881C13467D000F82CE /* Resources */,
+				C6D02CBF303D88BB58A12EF6 /* Embed Pods Frameworks */,
+				80EE8CC34EA12314AD6C8D7C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EC91946D38EB2A0676F5392 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		80EE8CC34EA12314AD6C8D7C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTAApp/Pods-MTAApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6D02CBF303D88BB58A12EF6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTAApp/Pods-MTAApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0F4F93861C13467D000F82CE /* Sources */ = {
@@ -397,6 +472,7 @@
 		};
 		0F4F93B31C13467D000F82CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA8040F81C9D4664B03E8385 /* Pods-MTAApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MTAApp/Info.plist;
@@ -408,6 +484,7 @@
 		};
 		0F4F93B41C13467D000F82CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD2E3D79507E4C3FF2DACE80 /* Pods-MTAApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MTAApp/Info.plist;
@@ -484,6 +561,7 @@
 				0F4F93B41C13467D000F82CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F4F93B51C13467D000F82CE /* Build configuration list for PBXNativeTarget "MTAAppTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +570,7 @@
 				0F4F93B71C13467D000F82CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F4F93B81C13467D000F82CE /* Build configuration list for PBXNativeTarget "MTAAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +579,7 @@
 				0F4F93BA1C13467D000F82CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
